@@ -2,6 +2,7 @@ package com.example.a21go.Adapters
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
     var countdownworkout=0
     var countdownbooks=0
     var countdownmeditation=0
+    var totalSessions=0
     inner class ViewHolder(val binding:CardViewHabitsBinding):RecyclerView.ViewHolder(binding.root) {
 
     }
@@ -65,6 +67,7 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
               {countdownbooks++
                   if(countdownbooks!=0)
                   {
+                      holder.binding.PieChartHabits.visibility= View.VISIBLE
                       holder.binding.PieChartHabits.addPieSlice(
                           PieModel(
                               "AS",100.toFloat(),
@@ -76,9 +79,11 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
               }
               position==2->
               {
+                  holder.binding.PieChartHabits.visibility= View.VISIBLE
                   countdownmeditation++
                   if(countdownmeditation!=0)
                   {
+                      holder.binding.PieChartHabits.visibility= View.VISIBLE
                       holder.binding.PieChartHabits.addPieSlice(
                           PieModel(
                               "AS",100.toFloat(),
@@ -100,12 +105,7 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
                         if (!(countdownworkout <= 0)) {
                             countdownworkout--
                             if (countdownworkout == 0) {
-                                holder.binding.PieChartHabits.addPieSlice(
-                                    PieModel(
-                                        "AS", 100F,
-                                        Color.GRAY
-                                    )
-                                )
+                                holder.binding.PieChartHabits.visibility= View.INVISIBLE
                             }
                             holder.binding.CounterText.text = countdownworkout.toString()
                         }
@@ -115,12 +115,7 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
                         if (!(countdownbooks<= 0)) {
                             countdownbooks--
                             if (countdownbooks == 0) {
-                                holder.binding.PieChartHabits.addPieSlice(
-                                    PieModel(
-                                        "AS", 100F,
-                                        Color.GRAY
-                                    )
-                                )
+                                holder.binding.PieChartHabits.visibility= View.INVISIBLE
                             }
                             holder.binding.CounterText.text = countdownbooks.toString()
                         }
@@ -129,13 +124,8 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
 
                         if (!(countdownmeditation<= 0)) {
                             countdownmeditation--
-                        if (countdownmeditation != 0) {
-                            holder.binding.PieChartHabits.addPieSlice(
-                                PieModel(
-                                    "AS", 100F,
-                                    Color.GRAY
-                                )
-                            )
+                        if (countdownmeditation == 0) {
+                            holder.binding.PieChartHabits.visibility= View.INVISIBLE
                         }
                         holder.binding.CounterText.text = countdownmeditation.toString()
                     }
