@@ -64,6 +64,7 @@ class Splash_Screen : Fragment() {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
         Handler().postDelayed(
             {
+
                 findNavController().navigate(R.id.homePageFragment2)
             },3000
         )
