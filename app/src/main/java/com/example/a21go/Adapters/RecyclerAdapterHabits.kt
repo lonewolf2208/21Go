@@ -10,7 +10,9 @@ import com.example.a21go.databinding.CardViewHabitsBinding
 import org.eazegraph.lib.models.PieModel
 
 class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHolder>() {
-    var countdown=0
+    var countdownworkout=0
+    var countdownbooks=0
+    var countdownmeditation=0
     inner class ViewHolder(val binding:CardViewHabitsBinding):RecyclerView.ViewHolder(binding.root) {
 
     }
@@ -29,44 +31,115 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
         position==0->
             {
                 holder.binding.HabitTitle.text = "Workout"
-                holder.binding.ImageHoldeHabits.setBackgroundResource(R.drawable.common_full_open_on_phone)
+                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_meditation)
             }
             position==1->
             {
                 holder.binding.HabitTitle.text = "Books"
-                holder.binding.ImageHoldeHabits.setBackgroundResource(R.drawable.ic_book)
+                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_book)
             }
             position==2->
             {
                 holder.binding.HabitTitle.text = "Meditation"
-                holder.binding.ImageHoldeHabits.setBackgroundResource(R.drawable.ic_meditation)
+                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_meditation)
             }
         }
 
       holder.binding.HabitIncreaseCounter.setOnClickListener {
-
-          countdown++
-          if(countdown!=0)
-          {
-              holder.binding.PieChartHabits.addPieSlice(
-                  PieModel(
-                      "AS",100.toFloat(),
-                      Color.CYAN
-                  )
-              )
+          when {
+              position==0->
+              {
+                  countdownworkout++
+                  if(countdownworkout!=0)
+                  {
+                      holder.binding.PieChartHabits.addPieSlice(
+                          PieModel(
+                              "AS",100.toFloat(),
+                              Color.CYAN
+                          )
+                      )
+                  }
+                  holder.binding.CounterText.text=countdownworkout.toString()
+              }
+              position==1->
+              {countdownbooks++
+                  if(countdownbooks!=0)
+                  {
+                      holder.binding.PieChartHabits.addPieSlice(
+                          PieModel(
+                              "AS",100.toFloat(),
+                              Color.CYAN
+                          )
+                      )
+                  }
+                  holder.binding.CounterText.text=countdownbooks.toString()
+              }
+              position==2->
+              {
+                  countdownmeditation++
+                  if(countdownmeditation!=0)
+                  {
+                      holder.binding.PieChartHabits.addPieSlice(
+                          PieModel(
+                              "AS",100.toFloat(),
+                              Color.CYAN
+                          )
+                      )
+                  }
+                  holder.binding.CounterText.text=countdownmeditation.toString()
+              }
           }
-          holder.binding.CounterText.text=countdown.toString()
+
       }
         holder.binding.HabitsDecreaseOunter.setOnClickListener {
-            countdown--
-            if(countdown==0)
-            {
-                holder.binding.PieChartHabits.addPieSlice(
-                    PieModel(
-                        "AS",100.toFloat(),
-                        Color.GRAY
-                    )
-                )
+
+                when {
+
+                    position == 0 -> {
+
+                        if (!(countdownworkout <= 0)) {
+                            countdownworkout--
+                            if (countdownworkout == 0) {
+                                holder.binding.PieChartHabits.addPieSlice(
+                                    PieModel(
+                                        "AS", 100F,
+                                        Color.GRAY
+                                    )
+                                )
+                            }
+                            holder.binding.CounterText.text = countdownworkout.toString()
+                        }
+                    }
+                    position == 1 -> {
+
+                        if (!(countdownbooks<= 0)) {
+                            countdownbooks--
+                            if (countdownbooks == 0) {
+                                holder.binding.PieChartHabits.addPieSlice(
+                                    PieModel(
+                                        "AS", 100F,
+                                        Color.GRAY
+                                    )
+                                )
+                            }
+                            holder.binding.CounterText.text = countdownbooks.toString()
+                        }
+                    }
+                    position == 2 -> {
+
+                        if (!(countdownmeditation<= 0)) {
+                            countdownmeditation--
+                        if (countdownmeditation != 0) {
+                            holder.binding.PieChartHabits.addPieSlice(
+                                PieModel(
+                                    "AS", 100F,
+                                    Color.GRAY
+                                )
+                            )
+                        }
+                        holder.binding.CounterText.text = countdownmeditation.toString()
+                    }
+                }
             }
         }
     }

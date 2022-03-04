@@ -8,4 +8,8 @@
         android:id="@+id/splash_Screen"
         android:name="com.example.a21go.Ui.Splash_Screen"
         android:label="Splash_Screen" />
+    <fragment
+        android:id="@+id/homePageFragment2"
+        android:name="com.example.a21go.Ui.HomePageFragment"
+        android:label="HomePageFragment" />
 </navigation>
