@@ -28,7 +28,6 @@ class Splash_Screen : Fragment() {
             dataStore?.edit { Settings->
                 Settings[dataStoreKey]=value
             }
-
         }
         suspend fun readInfo(key:String):String?
         {

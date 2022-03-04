@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    android:id="@+id/navigation"
+    app:startDestination="@id/splash_Screen">
 
+    <fragment
+        android:id="@+id/splash_Screen"
+        android:name="com.example.a21go.Ui.Splash_Screen"
+        android:label="Splash_Screen" />
 </navigation>
