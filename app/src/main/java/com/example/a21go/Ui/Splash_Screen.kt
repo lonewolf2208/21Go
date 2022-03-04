@@ -12,6 +12,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.preferencesKey
 import androidx.datastore.preferences.createDataStore
+import androidx.navigation.fragment.findNavController
 import com.example.a21go.R
 import com.example.a21go.databinding.FragmentSplashScreenBinding
 import kotlinx.coroutines.flow.first
@@ -28,7 +29,6 @@ class Splash_Screen : Fragment() {
             dataStore?.edit { Settings->
                 Settings[dataStoreKey]=value
             }
-
         }
         suspend fun readInfo(key:String):String?
         {
@@ -64,7 +64,7 @@ class Splash_Screen : Fragment() {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
         Handler().postDelayed(
             {
-
+                findNavController().navigate(R.id.homePageFragment2)
             },3000
         )
         return binding.root

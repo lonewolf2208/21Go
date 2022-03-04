@@ -2,10 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splash_Screen">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.a21go.Auth.LoginFragment"
-        android:label="LoginFragment" />
+        android:id="@+id/splash_Screen"
+        android:name="com.example.a21go.Ui.Splash_Screen"
+        android:label="Splash_Screen" />
+    <fragment
+        android:id="@+id/homePageFragment2"
+        android:name="com.example.a21go.Ui.HomePageFragment"
+        android:label="HomePageFragment" />
 </navigation>
