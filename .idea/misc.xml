@@ -3,8 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_splash__screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/border_curve.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_email.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_username.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_basic_page.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_group__2_.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_group__4_.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__33_.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__35_.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__36_.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/absent_view.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_main.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/current_view.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/default_view.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/edit_text_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_splash__screen.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/login_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/present_view.xml" value="0.17083333333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18697916666666667" />
       </map>
     </option>
   </component>
