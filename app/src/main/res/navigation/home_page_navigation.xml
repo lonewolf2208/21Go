@@ -10,4 +10,8 @@
         android:name="com.example.a21go.Ui.HomePageFragment"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.a21go.Ui.StatsFragment"
+        android:label="StatsFragment" />
 </navigation>

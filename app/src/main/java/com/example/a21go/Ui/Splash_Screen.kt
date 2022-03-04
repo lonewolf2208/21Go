@@ -21,6 +21,8 @@ import kotlinx.coroutines.flow.first
 class Splash_Screen : Fragment() {
     lateinit var binding:FragmentSplashScreenBinding
     companion object{
+        lateinit var USERID:String
+
 
         var dataStore: DataStore<Preferences>? = null
         suspend fun save(key:String,value:Boolean)
@@ -64,7 +66,7 @@ class Splash_Screen : Fragment() {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
         Handler().postDelayed(
             {
-                findNavController().navigate(R.id.homePageFragment2)
+                findNavController().navigate(R.id.loginFragment)
             },3000
         )
         return binding.root

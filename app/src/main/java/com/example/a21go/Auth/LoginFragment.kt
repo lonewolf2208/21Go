@@ -11,9 +11,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.a21go.Network.Response
 import com.example.a21go.R
 import com.example.a21go.Repository.LoginRepo
+import com.example.a21go.Ui.Splash_Screen.Companion.saveInfo
 import com.example.a21go.databinding.LoginFragmentBinding
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.launch
@@ -46,6 +48,11 @@ class LoginFragment : Fragment() {
 
                             Toast.makeText(context, "LogedIn", Toast.LENGTH_SHORT).show()
                             progressBar.visibility=View.GONE
+
+                            lifecycleScope.launch {
+
+                                saveInfo("USERID",it.data?.id.toString())
+                            }
                             loginRepo.userDetails.observe(viewLifecycleOwner, {
 //                                Log.i("login","response"+it)
 //                                datastore = Datastore(requireContext())
@@ -58,6 +65,9 @@ class LoginFragment : Fragment() {
 //                                        .navigate(R.id.action_login_Fragment_to_dashboard)
 //                                }
                             })
+
+
+                                findNavController().navigate(R.id.homePageActivity)
 
                         }
 

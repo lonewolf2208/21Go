@@ -7,9 +7,25 @@
     <fragment
         android:id="@+id/splash_Screen"
         android:name="com.example.a21go.Ui.Splash_Screen"
-        android:label="Splash_Screen" />
+        android:label="Splash_Screen" >
+        <action
+            android:id="@+id/action_splash_Screen_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homePageFragment2"
         android:name="com.example.a21go.Ui.HomePageFragment"
         android:label="HomePageFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.a21go.Auth.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homePageActivity"
+            app:destination="@id/homePageActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/homePageActivity"
+        android:name="com.example.a21go.Activity.HomePageActivity"
+        android:label="HomePageActivity" />
 </navigation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Stats"
+        android:title="Stats"
+        android:icon="@drawable/ic_vector__37_"/>
+    <item
+        android:id="@+id/Category"
+        android:title="Category"
+        android:icon="@drawable/ic_vector__38_"/>
+    <item
+        android:id="@+id/PrivacyPolicies"
+        android:title="Privacy Policies"
+        android:icon="@drawable/ic_vector__39_"/>
+    <item
+        android:id="@+id/About21Go"
+        android:title="About 21Go"
+        android:icon="@drawable/ic_vector__40_"/>
+    <item
+        android:id="@+id/Logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_vector__41_"/>
+
+
+</menu>
