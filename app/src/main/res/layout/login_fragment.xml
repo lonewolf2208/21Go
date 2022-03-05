@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_basic_page" >
+    android:background="#2B6ABC"
+
+   >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/ic_basic_page__1_"
         >
 
     <ImageView
@@ -18,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_healthy_lifestyle_bro__1__1" />
+        app:srcCompat="@drawable/ic_healthy_lifestyle_bro__1__1__1_" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
@@ -41,11 +44,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_curve"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#F0F0F0"
             android:drawableEnd="@drawable/custom_username"
             android:drawablePadding="18dp"
             android:hint="Username"
-            android:textColorHint="#B9314F"
+            android:textColorHint="#0C53A6"
             android:inputType="textEmailAddress"
 
             android:textSize="16sp" />
@@ -60,6 +63,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="65dp"
         android:drawablePadding="26dp"
+        app:boxStrokeColor="#003D82"
+        app:boxStrokeWidth="2dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,14 +75,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_curve"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="#F0F0F0"
             android:drawableEnd="@drawable/custom_email"
             android:drawablePadding="16dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColorHint="#B9314F"
+            android:textColorHint="#0C53A6"
 
-            android:textSize="18sp" />
+
+            android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

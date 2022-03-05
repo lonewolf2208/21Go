@@ -79,7 +79,7 @@ class Splash_Screen : Fragment() {
             loggedIn = read("loggedIn")
             if(loggedIn==true)
             {
-                data=HomePageRepo().HomePageApi(id!!.toInt())
+                data=HomePageRepo().HomePageApi(id.toInt())
             }
         }
 
@@ -88,8 +88,9 @@ class Splash_Screen : Fragment() {
                 lifecycleScope.launch {
                     if(loggedIn==true)
                     {
-                        var intent=Intent(activity,HomePageActivity::class.java)
-                        startActivity(intent)
+//                        var intent=Intent(activity,HomePageActivity::class.java)
+//                        startActivity(intent)
+                        findNavController().navigate(R.id.loginFragment)
                     }
                     else {
                         findNavController().navigate(R.id.loginFragment)

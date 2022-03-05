@@ -33,17 +33,11 @@ class HomePageActivity : AppCompatActivity() {
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
-        val intent = Intent(this, HomePageActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         val builder = android.app.AlertDialog.Builder(this)
         builder.setTitle("Sign Out")
             .setMessage("Are you sure you want to Sign Out ?")
             .setPositiveButton("Sign out") { dialog, id ->
-//                lifecycleScope.launch {
-//                    datastore = Datastore(requireContext())
-//                    datastore.changeLoginState(false)
-//                    activity?.finish()
-//                    startActivity(intent)
-//                }
                 loggedIn=false
                 startActivity(intent)
 
