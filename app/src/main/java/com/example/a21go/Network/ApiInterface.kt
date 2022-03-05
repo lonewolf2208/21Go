@@ -1,9 +1,6 @@
 package com.example.a21go.Network
 
-import com.example.a21go.model.Auth
-import com.example.a21go.model.HomePageModel
-import com.example.a21go.model.StatsModel
-import com.example.a21go.model.WallpapersModelItem
+import com.example.a21go.model.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -22,4 +19,10 @@ interface ApiInterface {
 
     @GET("/wallpapers/{day}/")
     fun getWallpapers(@Path("day")day:Int):Call<List<WallpapersModelItem>>
+
+    @GET(" /post/")
+    fun getForum():Call<List<CommunityForumDataClassItem>>
+    @FormUrlEncoded
+    @POST(" /post/")
+    fun postForum(@Field("user")id:Int,@Field("message")message:String,@Field("title")title:String):Call<List<CommunityForumDataClassItem>>
 }
