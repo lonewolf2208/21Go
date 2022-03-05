@@ -46,8 +46,7 @@ class LoginFragment : Fragment() {
                 loginRepo.loginResponse.observe(viewLifecycleOwner, {
                     when (it) {
                         is Response.Success -> {
-                                
-                           
+                            Splash_Screen.data.postValue(it)
                             progressBar.visibility=View.GONE
 
                             lifecycleScope.launch {
@@ -68,7 +67,7 @@ class LoginFragment : Fragment() {
                             })
 
 
-                                findNavController().navigate(R.id.homePageActivity)
+                                findNavController().navigate(R.id.action_loginFragment_to_categoryChoose)
 
                         }
 

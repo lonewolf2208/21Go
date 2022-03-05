@@ -79,7 +79,7 @@ class Splash_Screen : Fragment() {
              loggedIn = read("loggedIn")
             if(loggedIn==true)
             {
-                data=HomePageRepo().HomePageApi(id.toInt())
+                 data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt())
             }
         }
 

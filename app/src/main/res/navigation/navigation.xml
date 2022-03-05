@@ -23,9 +23,16 @@
         <action
             android:id="@+id/action_loginFragment_to_homePageActivity"
             app:destination="@id/homePageActivity" />
+        <action
+            android:id="@+id/action_loginFragment_to_categoryChoose"
+            app:destination="@id/categoryChoose" />
     </fragment>
     <activity
         android:id="@+id/homePageActivity"
         android:name="com.example.a21go.Activity.HomePageActivity"
         android:label="HomePageActivity" />
+    <fragment
+        android:id="@+id/categoryChoose"
+        android:name="com.example.a21go.Ui.CategoryChoose"
+        android:label="CategoryChoose" />
 </navigation>

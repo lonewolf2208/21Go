@@ -3,22 +3,23 @@ package com.example.a21go.Repository
 import androidx.lifecycle.MutableLiveData
 import com.example.a21go.Network.Response
 import com.example.a21go.Network.ServiceBuilder
+import com.example.a21go.model.Auth
 import com.example.a21go.model.HomePageModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 
 class HomePageRepo() {
-    private val HomePageApiLiveData = MutableLiveData<Response<HomePageModel>>()
+    private val HomePageApiLiveData = MutableLiveData<Response<Auth>>()
     fun HomePageApi(
         id:Int,
         
-    ): MutableLiveData<Response<HomePageModel>> {
+    ): MutableLiveData<Response<Auth>> {
         val result = ServiceBuilder.buildService().getHomePageApi(id)
-       result.enqueue(object : Callback<HomePageModel?> {
+       result.enqueue(object : Callback<Auth?> {
            override fun onResponse(
-               call: Call<HomePageModel?>,
-               response: retrofit2.Response<HomePageModel?>
+               call: Call<Auth?>,
+               response: retrofit2.Response<Auth?>
            ) {
                when
                {
@@ -30,7 +31,7 @@ class HomePageRepo() {
                }
            }
 
-           override fun onFailure(call: Call<HomePageModel?>, t: Throwable) {
+           override fun onFailure(call: Call<Auth?>, t: Throwable) {
                HomePageApiLiveData.postValue(Response.Error("Error"))
            }
        })

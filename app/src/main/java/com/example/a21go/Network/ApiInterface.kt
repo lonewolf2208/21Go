@@ -2,7 +2,6 @@ package com.example.a21go.Network
 
 import com.example.a21go.model.Auth
 import com.example.a21go.model.HomePageModel
-import com.example.a21go.model.StatsModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -18,4 +17,7 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST("/relapse-record/")
     fun relapseRecordApi(@Field("user")id:Int,@Field("reason")reason:String,@Field("best")best:Int):Call<ResponseBody>
+
+    @GET("/wallpapers/{day}/")
+    fun getWallpapers(@Path("day")day:Int):Call<List<WallpapersModelItem>>
 }

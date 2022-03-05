@@ -1,6 +1,9 @@
 package com.example.a21go.Ui
 
 import android.app.AlertDialog
+import android.app.DownloadManager
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,24 +20,32 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.CountDownTimer
+import android.os.Environment
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
+import com.example.a21go.Activity.HomePageActivity
 import com.example.a21go.Activity.MainActivity
+import com.example.a21go.Adapters.RecyclerAdapterWallapers
 import com.example.a21go.Network.Response
 import com.example.a21go.Repository.HomePageRepo
 import com.example.a21go.Repository.RelapseRepo
+import com.example.a21go.Repository.getWallpapersRepo
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 
 class HomePageFragment : Fragment() {
+    var downloadId:Long=0
     lateinit var binding:FragmentHomePageBinding
     private var layoutManager: RecyclerView.LayoutManager?=null
     lateinit var adapter: RecyclerAdapterHabits
+    private var layoutManagerWallpapers: RecyclerView.LayoutManager?=null
+    lateinit var adapterWallapers: RecyclerAdapterWallapers
     private val START_TIME_IN_MILLIS: Long = 21*24*60*60*1000
 
     private var mTextViewCountDown: TextView? = null
@@ -63,6 +74,10 @@ class HomePageFragment : Fragment() {
             LinearLayoutManager.HORIZONTAL,
             false
         )
+        lifecycleScope.launch {
+
+        }
+
         Splash_Screen.data.observe(viewLifecycleOwner,
             {
 
@@ -85,13 +100,6 @@ class HomePageFragment : Fragment() {
 
         mButtonReset = binding.buttonReset
 
-//        mButtonStartPause?.setOnClickListener(View.OnClickListener {
-//            if (mTimerRunning) {
-//                pauseTimer()
-//            } else {
-//                startTimer()
-//            }
-//        })
 
         mButtonReset?.setOnClickListener(View.OnClickListener { val builder= AlertDialog.Builder(requireContext())
             builder.setTitle("Quit App")
@@ -401,10 +409,13 @@ class HomePageFragment : Fragment() {
                     when(it)
                     {
                         is Response.Success->{
+                            RecyclerAdapterHabits.countdownmeditation=0
+                            RecyclerAdapterHabits.countdownbooks=0
+                            RecyclerAdapterHabits.countdownworkout=0
                             var data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt()).observe(viewLifecycleOwner,{
-                                binding.BestDays.text="${it.data?.best.toString()} Days"
-                                binding.Attempts.text=it.data?.attempts.toString()
-                                binding.NameHomePage.text="Hi ${it.data?.username.toString()}"
+                               Splash_Screen.data.postValue(it)
+                                var intent=Intent(activity,HomePageActivity::class.java)
+                                startActivity(intent)
                             })
 
                         }
@@ -451,7 +462,20 @@ class HomePageFragment : Fragment() {
 
         val prefs = MainActivity.prefs
         val editor = prefs.edit()
-
+        lifecycleScope.launch {
+            Splash_Screen.saveInfo(
+                "countdownworkout",
+                RecyclerAdapterHabits.countdownworkout.toString()
+            )
+            Splash_Screen.saveInfo(
+                "countdownbooks",
+                RecyclerAdapterHabits.countdownbooks.toString()
+            )
+            Splash_Screen.saveInfo(
+                "countdownmeditation",
+                RecyclerAdapterHabits.countdownmeditation.toString()
+            )
+        }
         editor.putLong("millisLeft", mTimeLeftInMillis)
         editor.putBoolean("timerRunning", mTimerRunning)
         editor.putLong("endTime", mEndTime)
@@ -473,7 +497,6 @@ class HomePageFragment : Fragment() {
 
         updateCountDownText();
         updateButtons();
-
         if (mTimerRunning) {
             mEndTime = prefs.getLong("endTime", 0);
             mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
@@ -487,7 +510,56 @@ class HomePageFragment : Fragment() {
                 startTimer();
             }
         }
-    }
+
+        lifecycleScope.launch {
+            var days = 20-TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
+            var data=getWallpapersRepo().getWallapapersApi(days.toInt())
+            data.observe(viewLifecycleOwner,
+                {
+                    when (it) {
+                        is Response.Success -> {
+                            layoutManager = LinearLayoutManager(
+                                requireContext(),
+                                LinearLayoutManager.HORIZONTAL,
+                                false
+                            )
+                            binding.recyclerViewWallapapers.layoutManager = layoutManager
+                            adapterWallapers=RecyclerAdapterWallapers(it.data)
+                            binding.recyclerViewWallapapers.adapter = adapterWallapers
+                            adapterWallapers.onClickListeer(object : RecyclerAdapterWallapers.ClickListener {
+                                override fun OnClick(position: Int) {
+                                    var dta= adapterWallapers.wallpapersModelItem!![position].image
+
+                                    val request = DownloadManager.Request(dta.toUri())
+                                    request.apply {
+                                        setTitle("21Go")
+                                        setDescription("Downloading...")
+                                        setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                                        setMimeType("image/jpeg")
+                                        setDestinationInExternalPublicDir(
+                                            Environment.DIRECTORY_DOWNLOADS,
+                                            "Educool Downloads/Notes/Wallpapers.pdf")
+                                        setAllowedOverRoaming(true)
+                                        setAllowedOverMetered(true)
+                                    }
+                                    val downloadManager =
+                                        activity?.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+                                    downloadId = downloadManager.enqueue(request)
+                                }
+                                val broadcastReceiver = object : BroadcastReceiver() {
+                                    override fun onReceive(context: Context?, intent: Intent?) {
+                                        val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+                                        if (id == downloadId) {
+                                            Toast.makeText(context, "Download complete", Toast.LENGTH_SHORT).show()
+                                        }
+
+                                    }
+
+                                }
 
 
-}
+                            })
+                        }
+                    }
+                })
+    }}}

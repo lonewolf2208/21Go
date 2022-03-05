@@ -11,10 +11,12 @@ import com.example.a21go.databinding.CardViewHabitsBinding
 import org.eazegraph.lib.models.PieModel
 
 class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHolder>() {
-    var countdownworkout=0
-    var countdownbooks=0
-    var countdownmeditation=0
-    var totalSessions=0
+    companion object {
+        var countdownworkout = 0
+        var countdownbooks = 0
+        var countdownmeditation = 0
+        var totalSessions = 0
+    }
     inner class ViewHolder(val binding:CardViewHabitsBinding):RecyclerView.ViewHolder(binding.root) {
 
     }
@@ -33,19 +35,50 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
         position==0->
             {
                 holder.binding.HabitTitle.text = "Workout"
-                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_meditation)
+                if(countdownworkout>0)
+                {
+                    holder.binding.PieChartHabits.addPieSlice(
+                        PieModel(
+                            "AS",100.toFloat(),
+                            Color.CYAN
+                        )
+                    )
+                }
+                holder.binding.CounterText.text="${countdownworkout}/1"
+                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_workout)
             }
             position==1->
             {
                 holder.binding.HabitTitle.text = "Books"
+                if(countdownbooks>0)
+                {
+                    holder.binding.PieChartHabits.addPieSlice(
+                        PieModel(
+                            "AS",100.toFloat(),
+                            Color.CYAN
+                        )
+                    )
+                }
+                holder.binding.CounterText.text="${countdownbooks}/1"
                 holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_book)
             }
             position==2->
             {
+                if(countdownmeditation>0)
+                {
+                    holder.binding.PieChartHabits.addPieSlice(
+                        PieModel(
+                            "AS",100.toFloat(),
+                            Color.CYAN
+                        )
+                    )
+                }
                 holder.binding.HabitTitle.text = "Meditation"
+                holder.binding.CounterText.text="${countdownmeditation}/1"
                 holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_meditation)
             }
         }
+
 
       holder.binding.HabitIncreaseCounter.setOnClickListener {
           when {
