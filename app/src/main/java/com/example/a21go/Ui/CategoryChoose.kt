@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
 import com.example.a21go.Activity.HomePageActivity
+import com.example.a21go.Activity.MainActivity
 import com.example.a21go.R
 import com.example.a21go.databinding.FragmentCategoryChooseBinding
 import kotlinx.coroutines.launch
@@ -29,6 +30,12 @@ class CategoryChoose : Fragment() {
         bindin=DataBindingUtil.inflate(inflater,R.layout.fragment_category_choose, container, false)
 
         bindin.AlcoholCategory.setOnClickListener {
+            val prefs = MainActivity.prefs
+            val editor = prefs.edit()
+            editor.putLong("millisLeft",21*24*60*60*1000)
+            editor.putBoolean("timerRunning",false)
+            editor.putLong("endTime", 0)
+            editor.apply()
             var intent= Intent(activity, HomePageActivity::class.java)
             lifecycleScope.launch {
                 Splash_Screen.saveInfo("category", "Alcohol")
@@ -36,6 +43,12 @@ class CategoryChoose : Fragment() {
             startActivity(intent)
         }
         bindin.SmokingCategory.setOnClickListener {
+            val prefs = MainActivity.prefs
+            val editor = prefs.edit()
+            editor.putLong("millisLeft",21*24*60*60*1000)
+            editor.putBoolean("timerRunning",false)
+            editor.putLong("endTime", 0)
+            editor.apply()
             var intent=Intent(activity,HomePageActivity::class.java)
             lifecycleScope.launch {
                 Splash_Screen.saveInfo("category", "Smoking")
@@ -43,6 +56,12 @@ class CategoryChoose : Fragment() {
             startActivity(intent)
         }
         bindin.OthersCategory.setOnClickListener {
+            val prefs = MainActivity.prefs
+            val editor = prefs.edit()
+            editor.putLong("millisLeft",21*24*60*60*1000)
+            editor.putBoolean("timerRunning",false)
+            editor.putLong("endTime", 0)
+            editor.apply()
             var intent=Intent(activity,HomePageActivity::class.java)
             lifecycleScope.launch {
                 Splash_Screen.saveInfo("category", "Others")
@@ -50,6 +69,12 @@ class CategoryChoose : Fragment() {
             startActivity(intent)
         }
         bindin.SocialMEdiaCategory.setOnClickListener {
+            val prefs = MainActivity.prefs
+            val editor = prefs.edit()
+            editor.putLong("millisLeft",21*24*60*60*1000)
+            editor.putBoolean("timerRunning",false)
+            editor.putLong("endTime", 0)
+            editor.apply()
             var intent=Intent(activity,HomePageActivity::class.java)
             lifecycleScope.launch {
                 Splash_Screen.saveInfo("category", " Social Media")
@@ -57,6 +82,12 @@ class CategoryChoose : Fragment() {
             startActivity(intent)
         }
         bindin.PornCategory.setOnClickListener {
+            val prefs = MainActivity.prefs
+            val editor = prefs.edit()
+            editor.putLong("millisLeft",21*24*60*60*1000)
+            editor.putBoolean("timerRunning",false)
+            editor.putLong("endTime", 0)
+            editor.apply()
             var intent=Intent(activity,HomePageActivity::class.java)
             lifecycleScope.launch {
                 Splash_Screen.saveInfo("category", "Porn")

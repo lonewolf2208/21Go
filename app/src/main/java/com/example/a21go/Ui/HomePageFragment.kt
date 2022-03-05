@@ -515,7 +515,6 @@ class HomePageFragment : Fragment() {
                                 RecyclerAdapterWallapers.ClickListener {
                                 override fun OnClick(position: Int) {
                                     var dta = adapterWallapers.wallpapersModelItem!![position].image
-
                                     val request = DownloadManager.Request(dta.toUri())
                                     request.apply {
                                         setTitle("21Go")
@@ -584,5 +583,6 @@ class HomePageFragment : Fragment() {
                 startTimer();
             }
         }
+        else{startTimer()}
 
     }}
