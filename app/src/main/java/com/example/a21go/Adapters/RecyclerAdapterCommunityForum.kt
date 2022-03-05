@@ -26,6 +26,7 @@ class RecyclerAdapterCommunityForum(var communityForumDataClassItem: List<Commun
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.ContentForum.text=communityForumDataClassItem[position].message
         holder.binding.TitleForum.text=communityForumDataClassItem[position].title
+        holder.binding.ByTextCommunityFOrum.text="~ By ${communityForumDataClassItem[position].user}"
     }
 
     override fun getItemCount(): Int {

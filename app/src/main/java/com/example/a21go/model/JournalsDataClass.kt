@@ -5,5 +5,8 @@ data class JournalsDataClass(
     val entry: String,
     val time_created: String,
     val user: Int,
-    var title:String=""
+    var title:String="",
+    var date:String="",
+    var month:String="",
+    var year:String=""
 )
