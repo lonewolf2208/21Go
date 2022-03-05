@@ -50,4 +50,12 @@
             android:id="@+id/action_notesAndJournals_to_journalsPost"
             app:destination="@id/journalsPost" />
     </fragment>
+    <fragment
+        android:id="@+id/about21Go"
+        android:name="com.example.a21go.Ui.About21Go"
+        android:label="About21Go" />
+    <fragment
+        android:id="@+id/privacyPolicy"
+        android:name="com.example.a21go.Ui.PrivacyPolicy"
+        android:label="PrivacyPolicy" />
 </navigation>

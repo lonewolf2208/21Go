@@ -77,6 +77,14 @@ class HomePageActivity : AppCompatActivity() {
                     findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.notesAndJournals)
                     drawerLayout.closeDrawers()
                 }
+                R.id.About21Go-> {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.about21Go)
+                    drawerLayout.closeDrawers()
+                }
+                R.id.PrivacyPolicies-> {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.privacyPolicy)
+                    drawerLayout.closeDrawers()
+                }
             }
             true
         }

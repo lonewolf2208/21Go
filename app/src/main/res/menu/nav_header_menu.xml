@@ -8,14 +8,14 @@
         android:id="@+id/Stats"
         android:title="Stats"
         android:icon="@drawable/ic_vector__37_"/>
-    <item
-        android:id="@+id/Journals"
-        android:title="Notes &amp; Journals"
-        android:icon="@drawable/ic_baseline_library_books_24"></item>
-    <item
-        android:id="@+id/CommunityForum"
-        android:icon="@drawable/ic_communitydrawer"
-        android:title="Community"></item>
+ <item
+     android:id="@+id/Journals"
+     android:title="Notes &amp; Journals"
+     android:icon="@drawable/ic_baseline_library_books_24" />
+ <item
+     android:id="@+id/CommunityForum"
+     android:icon="@drawable/ic_communitydrawer"
+     android:title="Community" />
     <item
         android:id="@+id/Category"
         android:title="Category"
