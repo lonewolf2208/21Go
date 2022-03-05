@@ -28,6 +28,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
+import com.example.a21go.Activity.HomePageActivity
 import com.example.a21go.Activity.MainActivity
 import com.example.a21go.Adapters.RecyclerAdapterWallapers
 import com.example.a21go.Network.Response
@@ -408,10 +409,13 @@ class HomePageFragment : Fragment() {
                     when(it)
                     {
                         is Response.Success->{
+                            RecyclerAdapterHabits.countdownmeditation=0
+                            RecyclerAdapterHabits.countdownbooks=0
+                            RecyclerAdapterHabits.countdownworkout=0
                             var data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt()).observe(viewLifecycleOwner,{
-                                binding.BestDays.text="${it.data?.best.toString()} Days"
-                                binding.Attempts.text=it.data?.attempts.toString()
-                                binding.NameHomePage.text="Hi ${it.data?.username.toString()}"
+                               Splash_Screen.data.postValue(it)
+                                var intent=Intent(activity,HomePageActivity::class.java)
+                                startActivity(intent)
                             })
 
                         }
@@ -458,7 +462,20 @@ class HomePageFragment : Fragment() {
 
         val prefs = MainActivity.prefs
         val editor = prefs.edit()
-
+        lifecycleScope.launch {
+            Splash_Screen.saveInfo(
+                "countdownworkout",
+                RecyclerAdapterHabits.countdownworkout.toString()
+            )
+            Splash_Screen.saveInfo(
+                "countdownbooks",
+                RecyclerAdapterHabits.countdownbooks.toString()
+            )
+            Splash_Screen.saveInfo(
+                "countdownmeditation",
+                RecyclerAdapterHabits.countdownmeditation.toString()
+            )
+        }
         editor.putLong("millisLeft", mTimeLeftInMillis)
         editor.putBoolean("timerRunning", mTimerRunning)
         editor.putLong("endTime", mEndTime)
@@ -495,7 +512,7 @@ class HomePageFragment : Fragment() {
         }
 
         lifecycleScope.launch {
-            var days = TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
+            var days = 20-TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
             var data=getWallpapersRepo().getWallapapersApi(days.toInt())
             data.observe(viewLifecycleOwner,
                 {

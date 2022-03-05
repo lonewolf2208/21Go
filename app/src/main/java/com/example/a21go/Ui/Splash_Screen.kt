@@ -17,10 +17,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.a21go.Activity.HomePageActivity
+import com.example.a21go.Adapters.RecyclerAdapterHabits
 import com.example.a21go.Network.Response
 import com.example.a21go.R
 import com.example.a21go.Repository.HomePageRepo
 import com.example.a21go.databinding.FragmentSplashScreenBinding
+import com.example.a21go.model.Auth
 import com.example.a21go.model.HomePageModel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -32,7 +34,7 @@ class Splash_Screen : Fragment() {
     var loggedIn :Boolean?= false
     companion object{
         lateinit var id:String
-         var data = MutableLiveData<Response<HomePageModel>>()
+         var data = MutableLiveData<Response<Auth>>()
         var dataStore: DataStore<Preferences>? = null
         suspend fun save(key:String,value:Boolean)
         {
@@ -78,6 +80,10 @@ class Splash_Screen : Fragment() {
              loggedIn = read("loggedIn")
             if(loggedIn==true)
             {
+               
+                RecyclerAdapterHabits.countdownworkout= readInfo("countdownworkout")!!.toInt()
+                RecyclerAdapterHabits.countdownbooks= readInfo("countdownbooks")!!.toInt()
+                RecyclerAdapterHabits.countdownmeditation= readInfo("countdownmeditation")!!.toInt()
                  data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt())
             }
         }

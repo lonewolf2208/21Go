@@ -85,16 +85,17 @@
          <Button
              android:id="@+id/button_reset"
              android:layout_width="134dp"
-             android:layout_height="60dp"
+             android:layout_height="wrap_content"
              android:layout_below="@+id/text_view_countdown"
-             android:layout_marginStart="40dp"
+             android:layout_marginStart="50dp"
              android:layout_marginTop="24dp"
              android:layout_marginEnd="40dp"
              android:backgroundTint="@color/black"
+             android:drawableTop="@drawable/ic_relapseicon"
              android:fontFamily="@font/minionopro_bold"
              android:text="Relapse"
              android:textColor="@color/white"
-             app:cornerRadius="2dp"
+             app:cornerRadius="10dp"
              app:layout_constraintEnd_toStartOf="@+id/textView4"
              app:layout_constraintHorizontal_bias="0.473"
              app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -143,8 +144,6 @@
              app:layout_constraintTop_toBottomOf="@+id/recyclerViewWallapapers" />
 
 
-
-
          <TextView
              android:id="@+id/UrlPage"
              android:layout_width="0dp"
@@ -152,6 +151,7 @@
              android:layout_marginStart="16dp"
              android:layout_marginTop="16dp"
              android:layout_marginEnd="16dp"
+             android:layout_marginBottom="24dp"
              android:background="#3E3B3B"
              android:fontFamily="@font/minionopro_bold"
              android:paddingTop="12dp"
@@ -160,6 +160,7 @@
              android:textAlignment="center"
              android:textColor="#FFFFFF"
              android:textSize="24sp"
+             app:layout_constraintBottom_toBottomOf="parent"
              app:layout_constraintEnd_toEndOf="parent"
              app:layout_constraintHorizontal_bias="0.0"
              app:layout_constraintStart_toStartOf="parent"

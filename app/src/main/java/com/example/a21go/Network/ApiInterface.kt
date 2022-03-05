@@ -12,7 +12,7 @@ interface ApiInterface {
     @POST("/user-create/")
     fun login(@Body data: Auth): Call<Auth>
     @GET("/home/{user_id}/")
-    fun getHomePageApi(@Path("user_id") id: Int ):Call<HomePageModel>
+    fun getHomePageApi(@Path("user_id") id: Int ):Call<Auth>
     @FormUrlEncoded
     @POST("/relapse-record/")
     fun relapseRecordApi(@Field("user")id:Int,@Field("reason")reason:String,@Field("best")best:Int):Call<ResponseBody>
