@@ -9,20 +9,21 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.a21go.Activity.HomePageActivity
 import com.example.a21go.R
+import com.example.a21go.databinding.About21goBinding
 import com.example.a21go.databinding.FragmentCategoryChooseBinding
 import com.example.a21go.databinding.PrivacyPolicyBinding
 import com.example.a21go.databinding.StatsFragmentBinding
 
 
 class About21Go : Fragment() {
-    private var _binding: PrivacyPolicyBinding? = null
+    private var _binding: About21goBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = PrivacyPolicyBinding.inflate(inflater, container, false)
+        _binding = About21goBinding.inflate(inflater, container, false)
         val view = binding.root
 
 
