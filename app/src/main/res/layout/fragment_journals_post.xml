@@ -66,7 +66,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="50dp"
                 android:backgroundTint="#2B6ABC"
-                android:text="POST"
+                android:text="SAVE"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ContentPostJournal" />

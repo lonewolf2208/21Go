@@ -28,7 +28,10 @@ class HomePageActivity : AppCompatActivity() {
 
         val drawerLayout=binding.drawerLayout
         val navView = binding.navView
-
+        Splash_Screen.data.observe(this,
+            {
+                binding.NameHomePage.text="${it.data?.username.toString()}"
+            })
         binding.icondrawer.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }

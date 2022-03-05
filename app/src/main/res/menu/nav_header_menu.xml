@@ -9,6 +9,14 @@
         android:title="Stats"
         android:icon="@drawable/ic_vector__37_"/>
     <item
+        android:id="@+id/Journals"
+        android:title="Notes &amp; Journals"
+        android:icon="@drawable/ic_baseline_library_books_24"></item>
+    <item
+        android:id="@+id/CommunityForum"
+        android:icon="@drawable/ic_communitydrawer"
+        android:title="Community"></item>
+    <item
         android:id="@+id/Category"
         android:title="Category"
         android:icon="@drawable/ic_vector__38_"/>
@@ -16,18 +24,12 @@
         android:id="@+id/PrivacyPolicies"
         android:title="Privacy Policies"
         android:icon="@drawable/ic_vector__39_"/>
-    <item
-        android:id="@+id/Journals"
-        android:title="Notes&amp;Journals"
-        android:icon="@drawable/ic_baseline_library_books_24"></item>
+
     <item
         android:id="@+id/About21Go"
         android:title="About 21Go"
         android:icon="@drawable/ic_vector__40_"/>
-        <item
-            android:id="@+id/CommunityForum"
-            android:icon="@drawable/ic_communitydrawer"
-            android:title="Community"></item>
+
 
 
 

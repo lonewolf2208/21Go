@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.a21go.Network.Response
 import com.example.a21go.R
 import com.example.a21go.Repository.PostJournalsRepo
@@ -31,7 +32,7 @@ class JournalsPost : Fragment() {
                     {
                         when(it)
                         {
-                            is Response.Success->{Toast.makeText(requireContext(),"success",Toast.LENGTH_LONG).show()}
+                            is Response.Success->{findNavController().navigate(R.id.action_journalsPost_to_notesAndJournals)}
                         }
                     })
             }

@@ -66,6 +66,11 @@ class HomePageFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_home_page, container, false)
+        lifecycleScope.launch {
+            var category=Splash_Screen.readInfo("category")
+            binding.countdownText.text="only to take ${category} off  your life"
+        }
+
         layoutManager = LinearLayoutManager(
             container?.context,
             LinearLayoutManager.HORIZONTAL,
@@ -78,7 +83,7 @@ class HomePageFragment : Fragment() {
 
                 binding.BestDays.text="${it.data?.best.toString()} Days"
                 binding.Attempts.text=it.data?.attempts.toString()
-                binding.NameHomePage.text="${it.data?.username.toString()}"
+
             })
         binding.RecyclerViewHabits.layoutManager = layoutManager
         adapter= RecyclerAdapterHabits()
