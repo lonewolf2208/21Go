@@ -13,10 +13,12 @@
 
         <ImageView
             android:id="@+id/icondrawer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/fragmentContainerViewHomePage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_view_headline_24" />
@@ -34,18 +36,32 @@
             app:navGraph="@navigation/home_page_navigation" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/NameHomePage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/minionopro_bold"
-            android:text="21Go"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/montserrat_alternates_bold"
+            android:text="UserName"
+            android:textColor="#D3FB90"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+
+            android:layout_marginEnd="6dp"
+            android:fontFamily="@font/montserrat_alternates_bold"
+            android:text="Hi"
             android:textColor="@color/white"
             android:textSize="36sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/icondrawer"
+            app:layout_constraintEnd_toStartOf="@+id/NameHomePage"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

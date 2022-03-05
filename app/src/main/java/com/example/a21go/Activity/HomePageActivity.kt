@@ -28,7 +28,10 @@ class HomePageActivity : AppCompatActivity() {
 
         val drawerLayout=binding.drawerLayout
         val navView = binding.navView
-
+        Splash_Screen.data.observe(this,
+            {
+                binding.NameHomePage.text="${it.data?.username.toString()}"
+            })
         binding.icondrawer.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
@@ -52,10 +55,27 @@ class HomePageActivity : AppCompatActivity() {
 
                     drawerLayout.closeDrawers()
                 }
-                R.id.Logout -> {
+                R.id.Category->
+                {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.categoryChoose2)
                     drawerLayout.closeDrawers()
-                    val alertDialog: android.app.AlertDialog = builder.create()
-                    alertDialog.show()
+                }
+                R.id.Menu->
+                {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.homePageFragment)
+
+                    drawerLayout.closeDrawers()
+                }
+
+                R.id.CommunityForum->
+                {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.communityForum)
+                    drawerLayout.closeDrawers()
+                }
+                R.id.Journals->
+                {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.notesAndJournals)
+                    drawerLayout.closeDrawers()
                 }
             }
             true

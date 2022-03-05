@@ -14,4 +14,40 @@
         android:id="@+id/statsFragment"
         android:name="com.example.a21go.Ui.StatsFragment"
         android:label="StatsFragment" />
+    <fragment
+        android:id="@+id/communityForum"
+        android:name="com.example.a21go.Ui.CommunityForum"
+        android:label="CommunityForum" >
+        <action
+            android:id="@+id/action_communityForum_to_communityForumPost"
+            app:destination="@id/communityForumPost" />
+    </fragment>
+    <fragment
+        android:id="@+id/communityForumPost"
+        android:name="com.example.a21go.Ui.CommunityForumPost"
+        android:label="CommunityForumPost" >
+        <action
+            android:id="@+id/action_communityForumPost_to_communityForum"
+            app:destination="@id/communityForum" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryChoose2"
+        android:name="com.example.a21go.Ui.CategoryChoose"
+        android:label="CategoryChoose" />
+    <fragment
+        android:id="@+id/journalsPost"
+        android:name="com.example.a21go.Ui.JournalsPost"
+        android:label="JournalsPost" >
+        <action
+            android:id="@+id/action_journalsPost_to_notesAndJournals"
+            app:destination="@id/notesAndJournals" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesAndJournals"
+        android:name="com.example.a21go.Ui.NotesAndJournals"
+        android:label="NotesAndJournals" >
+        <action
+            android:id="@+id/action_notesAndJournals_to_journalsPost"
+            app:destination="@id/journalsPost" />
+    </fragment>
 </navigation>

@@ -21,10 +21,7 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.CountDownTimer
 import android.os.Environment
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
@@ -50,7 +47,7 @@ class HomePageFragment : Fragment() {
 
     private var mTextViewCountDown: TextView? = null
 //    private var mButtonStartPause: Button? = null
-    private var mButtonReset: Button? = null
+    private var mButtonReset: ImageView? = null
     var achievmentTimer:String=""
     private var mCountDownTimer: CountDownTimer? = null
     var timerachievement:Long=0
@@ -69,6 +66,11 @@ class HomePageFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_home_page, container, false)
+        lifecycleScope.launch {
+            var category=Splash_Screen.readInfo("category")
+            binding.countdownText.text="only to take ${category} off  your life"
+        }
+
         layoutManager = LinearLayoutManager(
             container?.context,
             LinearLayoutManager.HORIZONTAL,
@@ -81,7 +83,7 @@ class HomePageFragment : Fragment() {
 
                 binding.BestDays.text="${it.data?.best.toString()} Days"
                 binding.Attempts.text=it.data?.attempts.toString()
-                binding.NameHomePage.text="Hi ${it.data?.username.toString()}"
+
             })
         binding.RecyclerViewHabits.layoutManager = layoutManager
         adapter= RecyclerAdapterHabits()
