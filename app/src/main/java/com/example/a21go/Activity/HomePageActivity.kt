@@ -69,6 +69,11 @@ class HomePageActivity : AppCompatActivity() {
                     findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.communityForum)
                     drawerLayout.closeDrawers()
                 }
+                R.id.Journals->
+                {
+                    findNavController(R.id.fragmentContainerViewHomePage).navigate(R.id.notesAndJournals)
+                    drawerLayout.closeDrawers()
+                }
             }
             true
         }

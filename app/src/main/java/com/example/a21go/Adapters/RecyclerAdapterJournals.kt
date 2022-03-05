@@ -6,17 +6,17 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a21go.R
 import com.example.a21go.databinding.CardViewCommunityForumBinding
-import com.example.a21go.databinding.CardViewHabitsBinding
 import com.example.a21go.model.CommunityForumDataClassItem
+import com.example.a21go.model.JournalsDataClass
 
-class RecyclerAdapterCommunityForum(var communityForumDataClassItem: List<CommunityForumDataClassItem>): RecyclerView.Adapter<RecyclerAdapterCommunityForum.ViewHolder>() {
-    inner class ViewHolder(val binding:CardViewCommunityForumBinding):RecyclerView.ViewHolder(binding.root) {
+class RecyclerAdapterJournals(var communityForumDataClassItem: List<JournalsDataClass>): RecyclerView.Adapter<RecyclerAdapterJournals.ViewHolder>() {
+    inner class ViewHolder(val binding: CardViewCommunityForumBinding): RecyclerView.ViewHolder(binding.root) {
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater= LayoutInflater.from(parent.context)
-        val cardViewLecturesBinding:CardViewCommunityForumBinding=
+        val cardViewLecturesBinding: CardViewCommunityForumBinding =
             DataBindingUtil.inflate(layoutInflater,
                 R.layout.card_view_community_forum,parent,false)
 
@@ -24,7 +24,7 @@ class RecyclerAdapterCommunityForum(var communityForumDataClassItem: List<Commun
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.ContentForum.text=communityForumDataClassItem[position].message
+        holder.binding.ContentForum.text=communityForumDataClassItem[position].entry
         holder.binding.TitleForum.text=communityForumDataClassItem[position].title
     }
 

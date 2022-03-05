@@ -29,6 +29,7 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/absent_view.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_download.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_community_forum.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_habits.xml" value="0.4" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_wallpapers.xml" value="0.25416666666666665" />
@@ -39,6 +40,8 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_community_forum.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_community_forum_post.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_home_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_journals_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_notes_and_journals.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_splash__screen.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/present_view.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.13020833333333334" />

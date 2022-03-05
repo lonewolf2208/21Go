@@ -25,4 +25,11 @@ interface ApiInterface {
     @FormUrlEncoded
     @POST(" /post/")
     fun postForum(@Field("user")id:Int,@Field("message")message:String,@Field("title")title:String):Call<ResponseBody>
+
+    @GET("/journal/{user_id}/")
+    fun getJournals(@Path("user_id")id:Int):Call<List<JournalsDataClass>>
+
+    @FormUrlEncoded
+    @POST("/journal/{user_id}/")
+    fun postJournals(@Path("user_id")user:Int,@Field("entry")message:String,@Field("user")id:Int):Call<ResponseBody>
 }
