@@ -20,8 +20,14 @@ import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.a21go.Activity.MainActivity
+import com.example.a21go.Network.Response
+import com.example.a21go.Repository.HomePageRepo
+import com.example.a21go.Repository.RelapseRepo
+import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 
@@ -57,6 +63,13 @@ class HomePageFragment : Fragment() {
             LinearLayoutManager.HORIZONTAL,
             false
         )
+        Splash_Screen.data.observe(viewLifecycleOwner,
+            {
+
+                binding.BestDays.text="${it.data?.best.toString()} Days"
+                binding.Attempts.text=it.data?.attempts.toString()
+                binding.NameHomePage.text="Hi ${it.data?.username.toString()}"
+            })
         binding.RecyclerViewHabits.layoutManager = layoutManager
         adapter= RecyclerAdapterHabits()
         binding.RecyclerViewHabits.adapter = adapter
@@ -380,6 +393,25 @@ class HomePageFragment : Fragment() {
     }
 
     private fun resetTimer() {
+        var days = TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
+        lifecycleScope.launch {
+            var result=RelapseRepo().RelapseRepoApi(Splash_Screen.id.toInt(),"Mood",(21-days).toInt())
+            result.observe(viewLifecycleOwner,
+                {
+                    when(it)
+                    {
+                        is Response.Success->{
+                            var data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt()).observe(viewLifecycleOwner,{
+                                binding.BestDays.text="${it.data?.best.toString()} Days"
+                                binding.Attempts.text=it.data?.attempts.toString()
+                                binding.NameHomePage.text="Hi ${it.data?.username.toString()}"
+                            })
+
+                        }
+                        is Response.Error->{Toast.makeText(requireContext(),it.errorMessage.toString(),Toast.LENGTH_LONG).show()}
+                    }
+                })
+        }
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
         mCountDownTimer?.cancel()
         updateCountDownText();
