@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a21go.Adapters.RecyclerAdapterCommunityForum
@@ -34,6 +35,9 @@ class CommunityForum : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_community_forum, container, false)
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.communityForumPost)
+        }
         lifecycleScope.launch {
             var result=CommunityForumRepo().getCommunitytForumApi()
             result.observe(viewLifecycleOwner,

@@ -28,6 +28,6 @@ class RecyclerAdapterCommunityForum(var communityForumDataClassItem: List<Commun
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return communityForumDataClassItem.size
     }
 }

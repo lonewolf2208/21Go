@@ -21,10 +21,7 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.CountDownTimer
 import android.os.Environment
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
@@ -50,7 +47,7 @@ class HomePageFragment : Fragment() {
 
     private var mTextViewCountDown: TextView? = null
 //    private var mButtonStartPause: Button? = null
-    private var mButtonReset: Button? = null
+    private var mButtonReset: ImageView? = null
     var achievmentTimer:String=""
     private var mCountDownTimer: CountDownTimer? = null
     var timerachievement:Long=0
@@ -81,7 +78,7 @@ class HomePageFragment : Fragment() {
 
                 binding.BestDays.text="${it.data?.best.toString()} Days"
                 binding.Attempts.text=it.data?.attempts.toString()
-                binding.NameHomePage.text="Hi ${it.data?.username.toString()}"
+                binding.NameHomePage.text="${it.data?.username.toString()}"
             })
         binding.RecyclerViewHabits.layoutManager = layoutManager
         adapter= RecyclerAdapterHabits()

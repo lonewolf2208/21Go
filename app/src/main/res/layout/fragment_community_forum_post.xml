@@ -15,7 +15,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#202125">
+            android:background="#111113">
 
             <ImageView
                 android:id="@+id/imageView9"
@@ -33,6 +33,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:ems="10"
+                android:textColor="@color/white"
                 android:hint="TITLE"
                 android:inputType="textPersonName"
                 android:textColorHint="#2B6ABC"
@@ -49,6 +50,7 @@
                 android:layout_marginEnd="16dp"
                 android:ems="10"
                 android:hint="CONTENT"
+                android:textColor="@color/white"
                 android:inputType="textPersonName"
                 android:textColorHint="#2B6ABC"
                 app:layout_constraintEnd_toEndOf="parent"

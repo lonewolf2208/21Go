@@ -24,5 +24,5 @@ interface ApiInterface {
     fun getForum():Call<List<CommunityForumDataClassItem>>
     @FormUrlEncoded
     @POST(" /post/")
-    fun postForum(@Field("user")id:Int,@Field("message")message:String,@Field("title")title:String):Call<List<CommunityForumDataClassItem>>
+    fun postForum(@Field("user")id:Int,@Field("message")message:String,@Field("title")title:String):Call<ResponseBody>
 }

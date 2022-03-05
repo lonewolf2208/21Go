@@ -8,9 +8,11 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/curve.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_email.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_alcoholcategory.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_choosecategorydesign.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_communitydrawer.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_communityforumdesign.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_flagachievement.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1.xml" value="0.2703125" />
@@ -30,6 +32,8 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_community_forum.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_habits.xml" value="0.4" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_wallpapers.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/current_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/default_view.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/edit_text_layout.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_category_choose.xml" value="0.210412147505423" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_community_forum.xml" value="0.25416666666666665" />
