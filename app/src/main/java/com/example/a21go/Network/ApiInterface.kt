@@ -15,4 +15,7 @@ interface ApiInterface {
     fun getHomePageApi(@Path("user_id") id: Int ):Call<HomePageModel>
     @GET("/relapse/{user_id}/")
     fun stats(@Path("user_id") id: Int):Call<List<StatsModel>>
+    @FormUrlEncoded
+    @POST("/relapse-record/")
+    fun relapseRecordApi(@Field("user")id:Int,@Field("reason")reason:String,@Field("best")best:Int):Call<ResponseBody>
 }

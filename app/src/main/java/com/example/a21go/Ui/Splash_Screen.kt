@@ -28,10 +28,10 @@ import kotlinx.coroutines.launch
 
 class Splash_Screen : Fragment() {
     lateinit var binding:FragmentSplashScreenBinding
-    var id= ""
 
     companion object{
         lateinit var USERID:String
+        lateinit var id:String
         var data = MutableLiveData<Response<HomePageModel>>()
         var loggedIn :Boolean?= false
         var dataStore: DataStore<Preferences>? = null
@@ -75,8 +75,8 @@ class Splash_Screen : Fragment() {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
         lifecycleScope.launch {
-            id= readInfo("USERID").toString()
-            loggedIn = read("loggedIn")
+            Splash_Screen.id= readInfo("USERID").toString()
+             loggedIn = read("loggedIn")
             if(loggedIn==true)
             {
                 data=HomePageRepo().HomePageApi(id.toInt())
@@ -88,9 +88,8 @@ class Splash_Screen : Fragment() {
                 lifecycleScope.launch {
                     if(loggedIn==true)
                     {
-//                        var intent=Intent(activity,HomePageActivity::class.java)
-//                        startActivity(intent)
-                        findNavController().navigate(R.id.loginFragment)
+                        var intent=Intent(activity,HomePageActivity::class.java)
+                        startActivity(intent)
                     }
                     else {
                         findNavController().navigate(R.id.loginFragment)
