@@ -87,6 +87,7 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
                   countdownworkout++
                   if(countdownworkout!=0)
                   {
+                      holder.binding.PieChartHabits.visibility= View.VISIBLE
                       holder.binding.PieChartHabits.addPieSlice(
                           PieModel(
                               "AS",100.toFloat(),

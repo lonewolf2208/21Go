@@ -74,9 +74,7 @@ class HomePageFragment : Fragment() {
             LinearLayoutManager.HORIZONTAL,
             false
         )
-        lifecycleScope.launch {
 
-        }
 
         Splash_Screen.data.observe(viewLifecycleOwner,
             {
@@ -90,7 +88,7 @@ class HomePageFragment : Fragment() {
         binding.RecyclerViewHabits.adapter = adapter
         binding.UrlPage.setOnClickListener {
             val uri: Uri =
-                Uri.parse("https://youtu.be/Msx8fz9qvUM") // missing 'http://' will cause crashed
+                Uri.parse("https://youtu.be/Msx8fz9qvUM")
 
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
@@ -402,6 +400,12 @@ class HomePageFragment : Fragment() {
 
     private fun resetTimer() {
         var days = TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
+        val prefs = MainActivity.prefs
+        val editor = prefs.edit()
+        mTimeLeftInMillis=START_TIME_IN_MILLIS
+        mCountDownTimer?.cancel()
+        startTimer()
+
         lifecycleScope.launch {
             var result=RelapseRepo().RelapseRepoApi(Splash_Screen.id.toInt(),"Mood",(21-days).toInt())
             result.observe(viewLifecycleOwner,
@@ -409,11 +413,16 @@ class HomePageFragment : Fragment() {
                     when(it)
                     {
                         is Response.Success->{
+
                             RecyclerAdapterHabits.countdownmeditation=0
                             RecyclerAdapterHabits.countdownbooks=0
                             RecyclerAdapterHabits.countdownworkout=0
-                            var data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt()).observe(viewLifecycleOwner,{
-                               Splash_Screen.data.postValue(it)
+                            HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt()).observe(viewLifecycleOwner,{
+                                editor.putLong("millisLeft", mTimeLeftInMillis)
+                                editor.putBoolean("timerRunning", mTimerRunning)
+                                editor.putLong("endTime", mEndTime)
+                                editor.apply()
+                                Splash_Screen.data.postValue(it)
                                 var intent=Intent(activity,HomePageActivity::class.java)
                                 startActivity(intent)
                             })
@@ -423,10 +432,7 @@ class HomePageFragment : Fragment() {
                     }
                 })
         }
-        mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        mCountDownTimer?.cancel()
-        updateCountDownText();
-        startTimer()
+
     }
 
     private fun updateCountDownText() {
@@ -486,34 +492,11 @@ class HomePageFragment : Fragment() {
             mCountDownTimer!!.cancel()
         }
     }
-
-    override fun onStart() {
-        super.onStart();
-
-        var prefs = MainActivity.prefs
-
-        mTimeLeftInMillis = prefs.getLong("millisLeft", START_TIME_IN_MILLIS);
-        mTimerRunning = prefs.getBoolean("timerRunning", false);
-
-        updateCountDownText();
-        updateButtons();
-        if (mTimerRunning) {
-            mEndTime = prefs.getLong("endTime", 0);
-            mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
-
-            if (mTimeLeftInMillis < 0) {
-                mTimeLeftInMillis = 0;
-                mTimerRunning = false;
-                updateCountDownText();
-                updateButtons();
-            } else {
-                startTimer();
-            }
-        }
+    private fun getWallpapers() {
 
         lifecycleScope.launch {
-            var days = 20-TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
-            var data=getWallpapersRepo().getWallapapersApi(days.toInt())
+            var days = 20 - TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
+            var data = getWallpapersRepo().getWallapapersApi(days.toInt())
             data.observe(viewLifecycleOwner,
                 {
                     when (it) {
@@ -524,11 +507,12 @@ class HomePageFragment : Fragment() {
                                 false
                             )
                             binding.recyclerViewWallapapers.layoutManager = layoutManager
-                            adapterWallapers=RecyclerAdapterWallapers(it.data)
+                            adapterWallapers = RecyclerAdapterWallapers(it.data)
                             binding.recyclerViewWallapapers.adapter = adapterWallapers
-                            adapterWallapers.onClickListeer(object : RecyclerAdapterWallapers.ClickListener {
+                            adapterWallapers.onClickListeer(object :
+                                RecyclerAdapterWallapers.ClickListener {
                                 override fun OnClick(position: Int) {
-                                    var dta= adapterWallapers.wallpapersModelItem!![position].image
+                                    var dta = adapterWallapers.wallpapersModelItem!![position].image
 
                                     val request = DownloadManager.Request(dta.toUri())
                                     request.apply {
@@ -538,7 +522,8 @@ class HomePageFragment : Fragment() {
                                         setMimeType("image/jpeg")
                                         setDestinationInExternalPublicDir(
                                             Environment.DIRECTORY_DOWNLOADS,
-                                            "Educool Downloads/Notes/Wallpapers.pdf")
+                                            "Educool Downloads/Notes/Wallpapers.pdf"
+                                        )
                                         setAllowedOverRoaming(true)
                                         setAllowedOverMetered(true)
                                     }
@@ -546,11 +531,19 @@ class HomePageFragment : Fragment() {
                                         activity?.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
                                     downloadId = downloadManager.enqueue(request)
                                 }
+
                                 val broadcastReceiver = object : BroadcastReceiver() {
                                     override fun onReceive(context: Context?, intent: Intent?) {
-                                        val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+                                        val id = intent?.getLongExtra(
+                                            DownloadManager.EXTRA_DOWNLOAD_ID,
+                                            -1
+                                        )
                                         if (id == downloadId) {
-                                            Toast.makeText(context, "Download complete", Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(
+                                                context,
+                                                "Download complete",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
                                         }
 
                                     }
@@ -562,4 +555,32 @@ class HomePageFragment : Fragment() {
                         }
                     }
                 })
-    }}}
+
+        }
+    }
+    override fun onStart() {
+        super.onStart();
+
+        var prefs = MainActivity.prefs
+
+        mTimeLeftInMillis = prefs.getLong("millisLeft", START_TIME_IN_MILLIS);
+        mTimerRunning = prefs.getBoolean("timerRunning", false);
+        getWallpapers()
+        updateCountDownText();
+        updateButtons()
+        if (mTimerRunning) {
+            mEndTime = prefs.getLong("endTime", 0);
+            mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
+
+            if (mTimeLeftInMillis < 0) {
+                mTimeLeftInMillis = 0;
+                startTimer()
+                mTimerRunning = true;
+                updateCountDownText();
+                updateButtons();
+            } else {
+                startTimer();
+            }
+        }
+
+    }}

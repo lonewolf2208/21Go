@@ -21,6 +21,7 @@ import com.example.a21go.Network.Response
 import com.example.a21go.R
 import com.example.a21go.Repository.HomePageRepo
 import com.example.a21go.databinding.FragmentSplashScreenBinding
+import com.example.a21go.model.Auth
 import com.example.a21go.model.HomePageModel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -32,7 +33,7 @@ class Splash_Screen : Fragment() {
     companion object{
         lateinit var USERID:String
         lateinit var id:String
-        var data = MutableLiveData<Response<HomePageModel>>()
+        var data = MutableLiveData<Response<Auth>>()
         var loggedIn :Boolean?= false
         var dataStore: DataStore<Preferences>? = null
         suspend fun save(key:String,value:Boolean)

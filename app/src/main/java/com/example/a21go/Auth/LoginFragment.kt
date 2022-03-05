@@ -47,6 +47,7 @@ class LoginFragment : Fragment() {
                     when (it) {
                         is Response.Success -> {
                             Splash_Screen.data.postValue(it)
+                            Splash_Screen.id=it.data?.id.toString()
                             progressBar.visibility=View.GONE
 
                             lifecycleScope.launch {
