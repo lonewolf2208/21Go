@@ -20,7 +20,9 @@
         android:label="CommunityForum" >
         <action
             android:id="@+id/action_communityForum_to_communityForumPost"
-            app:destination="@id/communityForumPost" />
+            app:destination="@id/communityForumPost"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/communityForumPost"
@@ -28,7 +30,9 @@
         android:label="CommunityForumPost" >
         <action
             android:id="@+id/action_communityForumPost_to_communityForum"
-            app:destination="@id/communityForum" />
+            app:destination="@id/communityForum"
+            app:popUpTo="@id/home_page_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/categoryChoose2"
@@ -40,7 +44,9 @@
         android:label="JournalsPost" >
         <action
             android:id="@+id/action_journalsPost_to_notesAndJournals"
-            app:destination="@id/notesAndJournals" />
+            app:destination="@id/notesAndJournals"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/notesAndJournals"
@@ -48,7 +54,9 @@
         android:label="NotesAndJournals" >
         <action
             android:id="@+id/action_notesAndJournals_to_journalsPost"
-            app:destination="@id/journalsPost" />
+            app:destination="@id/journalsPost"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/about21Go"

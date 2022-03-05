@@ -1,5 +1,6 @@
 package com.example.a21go.Activity
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -88,6 +89,21 @@ class HomePageActivity : AppCompatActivity() {
             }
             true
         }
+    }
+    override fun onBackPressed() {
+        when (findNavController(R.id.fragmentContainerViewHomePage).currentDestination?.id) {
+            R.id.homePageFragment -> alertBox()
+            else -> super.onBackPressed()
+        }
+    }
+    private fun alertBox()
+    {
+        val builder= AlertDialog.Builder(this)
+        builder.setTitle("Quit App")
+            .setMessage("Are you sure you want to leave the App?")
+            .setPositiveButton("No"){dialog,id->dialog.cancel()}
+            .setNegativeButton("Yes"){dialog,id->finishAffinity()}
+        builder.show()
     }
 
 }

@@ -5,26 +5,13 @@
             <corners android:radius="5dip" />
             <gradient
                 android:angle="270"
-                android:centerColor="#ff5a5d5a"
+                android:centerColor="#E5E5E5"
                 android:centerY="0.75"
                 android:endColor="#E5E5E5"
                 android:startColor="#E5E5E5" />
         </shape>
     </item>
 
-    <item android:id="@android:id/secondaryProgress">
-        <clip>
-            <shape>
-                <corners android:radius="5dip" />
-                <gradient
-                    android:angle="270"
-                    android:centerColor="#A461E7"
-                    android:centerY="0.75"
-                    android:endColor="#2B6ABC"
-                    android:startColor="#8000FF" />
-            </shape>
-        </clip>
-    </item>
     <item android:id="@android:id/progress">
         <clip>
             <shape>
