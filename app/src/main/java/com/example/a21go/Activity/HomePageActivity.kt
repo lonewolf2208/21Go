@@ -14,12 +14,13 @@ import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.a21go.R
 import androidx.navigation.fragment.findNavController
+import com.example.a21go.Ui.Splash_Screen
+import com.example.a21go.Ui.Splash_Screen.Companion.loggedIn
 import com.example.a21go.databinding.ActivityHomePageBinding
 import kotlinx.coroutines.launch
 
 class HomePageActivity : AppCompatActivity() {
     private lateinit var binding:ActivityHomePageBinding
-    lateinit var toggleButton: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityHomePageBinding.inflate(layoutInflater)
@@ -27,15 +28,10 @@ class HomePageActivity : AppCompatActivity() {
 
         val drawerLayout=binding.drawerLayout
         val navView = binding.navView
-        toggleButton = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
-        //add the toggle button to drawerLayout
-        drawerLayout.addDrawerListener(toggleButton)
-        //it's ready to used
-        toggleButton.syncState()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        binding.icondrawer.setOnClickListener {
-//            drawerLayout.openDrawer(GravityCompat.START)
-//        }
+
+        binding.icondrawer.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
 
         val intent = Intent(this, HomePageActivity::class.java)
         val builder = android.app.AlertDialog.Builder(this)
@@ -48,6 +44,7 @@ class HomePageActivity : AppCompatActivity() {
 //                    activity?.finish()
 //                    startActivity(intent)
 //                }
+                loggedIn=false
                 startActivity(intent)
 
             }
@@ -70,10 +67,5 @@ class HomePageActivity : AppCompatActivity() {
             true
         }
     }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggleButton.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
 }

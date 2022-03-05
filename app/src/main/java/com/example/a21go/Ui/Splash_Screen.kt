@@ -13,12 +13,15 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.preferencesKey
 import androidx.datastore.preferences.createDataStore
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.a21go.Activity.HomePageActivity
+import com.example.a21go.Network.Response
 import com.example.a21go.R
 import com.example.a21go.Repository.HomePageRepo
 import com.example.a21go.databinding.FragmentSplashScreenBinding
+import com.example.a21go.model.HomePageModel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -26,11 +29,11 @@ import kotlinx.coroutines.launch
 class Splash_Screen : Fragment() {
     lateinit var binding:FragmentSplashScreenBinding
     var id= ""
-    var loggedIn = false
+
     companion object{
         lateinit var USERID:String
-
-
+        var data = MutableLiveData<Response<HomePageModel>>()
+        var loggedIn :Boolean?= false
         var dataStore: DataStore<Preferences>? = null
         suspend fun save(key:String,value:Boolean)
         {
@@ -72,11 +75,11 @@ class Splash_Screen : Fragment() {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
         lifecycleScope.launch {
-             id= readInfo("USERID").toString()
-             loggedIn = read("loggedIn")!!
+            id= readInfo("USERID").toString()
+            loggedIn = read("loggedIn")
             if(loggedIn==true)
             {
-                var data=HomePageRepo().HomePageApi(id!!.toInt())
+                data=HomePageRepo().HomePageApi(id!!.toInt())
             }
         }
 
