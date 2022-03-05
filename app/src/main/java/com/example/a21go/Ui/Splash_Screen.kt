@@ -28,12 +28,11 @@ import kotlinx.coroutines.launch
 
 class Splash_Screen : Fragment() {
     lateinit var binding:FragmentSplashScreenBinding
-    var id= ""
 
+    var loggedIn :Boolean?= false
     companion object{
-        lateinit var USERID:String
-        var data = MutableLiveData<Response<HomePageModel>>()
-        var loggedIn :Boolean?= false
+        lateinit var id:String
+         var data = MutableLiveData<Response<HomePageModel>>()
         var dataStore: DataStore<Preferences>? = null
         suspend fun save(key:String,value:Boolean)
         {
@@ -75,11 +74,11 @@ class Splash_Screen : Fragment() {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
         lifecycleScope.launch {
-            id= readInfo("USERID").toString()
-            loggedIn = read("loggedIn")
+            Splash_Screen.id= readInfo("USERID").toString()
+             loggedIn = read("loggedIn")
             if(loggedIn==true)
             {
-                data=HomePageRepo().HomePageApi(id!!.toInt())
+                 data=HomePageRepo().HomePageApi(Splash_Screen.id!!.toInt())
             }
         }
 
