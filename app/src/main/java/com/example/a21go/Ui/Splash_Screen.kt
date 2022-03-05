@@ -1,5 +1,6 @@
 package com.example.a21go.Ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -12,14 +13,20 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.preferencesKey
 import androidx.datastore.preferences.createDataStore
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.a21go.Activity.HomePageActivity
 import com.example.a21go.R
+import com.example.a21go.Repository.HomePageRepo
 import com.example.a21go.databinding.FragmentSplashScreenBinding
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 
 class Splash_Screen : Fragment() {
     lateinit var binding:FragmentSplashScreenBinding
+    var id= ""
+    var loggedIn = false
     companion object{
         lateinit var USERID:String
 
@@ -64,9 +71,27 @@ class Splash_Screen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_splash__screen, container, false)
+        lifecycleScope.launch {
+             id= readInfo("USERID").toString()
+             loggedIn = read("loggedIn")!!
+            if(loggedIn==true)
+            {
+                var data=HomePageRepo().HomePageApi(id!!.toInt())
+            }
+        }
+
         Handler().postDelayed(
             {
-                findNavController().navigate(R.id.loginFragment)
+                lifecycleScope.launch {
+                    if(loggedIn==true)
+                    {
+                        var intent=Intent(activity,HomePageActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else {
+                        findNavController().navigate(R.id.loginFragment)
+                    }
+                }
             },3000
         )
         return binding.root

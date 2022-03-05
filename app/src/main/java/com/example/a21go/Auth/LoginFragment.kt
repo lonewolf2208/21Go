@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.a21go.Network.Response
 import com.example.a21go.R
 import com.example.a21go.Repository.LoginRepo
+import com.example.a21go.Ui.Splash_Screen
 import com.example.a21go.Ui.Splash_Screen.Companion.saveInfo
 import com.example.a21go.databinding.LoginFragmentBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -45,13 +46,13 @@ class LoginFragment : Fragment() {
                 loginRepo.loginResponse.observe(viewLifecycleOwner, {
                     when (it) {
                         is Response.Success -> {
-
-                            Toast.makeText(context, "LogedIn", Toast.LENGTH_SHORT).show()
+                                
+                           
                             progressBar.visibility=View.GONE
 
                             lifecycleScope.launch {
-
                                 saveInfo("USERID",it.data?.id.toString())
+                                Splash_Screen.save("loggedIn",true)
                             }
                             loginRepo.userDetails.observe(viewLifecycleOwner, {
 //                                Log.i("login","response"+it)

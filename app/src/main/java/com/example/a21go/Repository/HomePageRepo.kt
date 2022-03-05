@@ -12,7 +12,7 @@ class HomePageRepo() {
     private val HomePageApiLiveData = MutableLiveData<Response<HomePageModel>>()
     fun HomePageApi(
         id:Int,
-        token: String
+        
     ): MutableLiveData<Response<HomePageModel>> {
         val result = ServiceBuilder.buildService().getHomePageApi(id)
        result.enqueue(object : Callback<HomePageModel?> {
