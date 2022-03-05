@@ -14,18 +14,22 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_group__8_">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="50dp"
-                android:text="Splash_Screen"
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView2"
+                android:layout_width="0dp"
+                android:layout_height="320dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/landing_page_second" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>

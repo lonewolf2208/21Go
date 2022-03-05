@@ -78,7 +78,6 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
 
 
 
-       // customCalendar.monthYearTextView.setTextColor(Color.parseColor("#ffffff"))
         customCalendar.setOnNavigationButtonClickedListener(CustomCalendar.PREVIOUS, this)
         customCalendar.setOnNavigationButtonClickedListener(CustomCalendar.NEXT, this)
 
@@ -99,7 +98,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.JANUARY -> {
                 arr[0] = HashMap()
                 if(Calendar.JANUARY<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -165,7 +164,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.MARCH -> {
                 arr[0] = HashMap()
                 if(Calendar.MARCH<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -198,7 +197,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.APRIL -> {
                 arr[0] = HashMap()
                 if(Calendar.APRIL<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..30)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -231,7 +230,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.MAY -> {
                 arr[0] = HashMap()
                 if(Calendar.MAY<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -264,7 +263,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.JUNE -> {
                 arr[0] = HashMap()
                 if(Calendar.JUNE<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..30)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -297,7 +296,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.JULY -> {
                 arr[0] = HashMap()
                 if(Calendar.JULY<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -330,7 +329,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.AUGUST -> {
                 arr[0] = HashMap()
                 if(Calendar.AUGUST<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -363,7 +362,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.SEPTEMBER -> {
                 arr[0] = HashMap()
                 if(Calendar.SEPTEMBER<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..30)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -396,7 +395,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.OCTOBER -> {
                 arr[0] = HashMap()
                 if(Calendar.OCTOBER<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -429,7 +428,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.NOVEMBER -> {
                 arr[0] = HashMap()
                 if(Calendar.NOVEMBER<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..30)
                     {
                         arr[0]?.set(i, "present")
                     }
@@ -462,7 +461,7 @@ class StatsFragment :Fragment(), OnNavigationButtonClickedListener {
             Calendar.DECEMBER -> {
                 arr[0] = HashMap()
                 if(Calendar.DECEMBER<Calendar.MONTH){
-                    for (i in 1..customCalendar.allViews.size)
+                    for (i in 1..31)
                     {
                         arr[0]?.set(i, "present")
                     }
