@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/border_curve.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/curve.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_email.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_flagachievement.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1.xml" value="0.2703125" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_meditation.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__35_.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__40_.xml" value="0.14635416666666667" />
@@ -16,8 +18,9 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/progressbarcolour.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/font/roboto_bold.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/absent_view.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_download.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_habits.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_habits.xml" value="0.4" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_wallpapers.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/edit_text_layout.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_home_page.xml" value="0.25416666666666665" />

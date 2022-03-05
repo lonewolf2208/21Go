@@ -1,6 +1,9 @@
 package com.example.a21go.Ui
 
 import android.app.AlertDialog
+import android.app.DownloadManager
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,11 +20,13 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.CountDownTimer
+import android.os.Environment
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
 import com.example.a21go.Activity.MainActivity
 import com.example.a21go.Adapters.RecyclerAdapterWallapers
@@ -34,6 +39,7 @@ import java.util.concurrent.TimeUnit
 
 
 class HomePageFragment : Fragment() {
+    var downloadId:Long=0
     lateinit var binding:FragmentHomePageBinding
     private var layoutManager: RecyclerView.LayoutManager?=null
     lateinit var adapter: RecyclerAdapterHabits
@@ -70,6 +76,7 @@ class HomePageFragment : Fragment() {
         lifecycleScope.launch {
 
         }
+
         Splash_Screen.data.observe(viewLifecycleOwner,
             {
 
@@ -473,6 +480,20 @@ class HomePageFragment : Fragment() {
 
         updateCountDownText();
         updateButtons();
+        if (mTimerRunning) {
+            mEndTime = prefs.getLong("endTime", 0);
+            mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
+
+            if (mTimeLeftInMillis < 0) {
+                mTimeLeftInMillis = 0;
+                mTimerRunning = false;
+                updateCountDownText();
+                updateButtons();
+            } else {
+                startTimer();
+            }
+        }
+
         lifecycleScope.launch {
             var days = TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
             var data=getWallpapersRepo().getWallapapersApi(days.toInt())
@@ -488,25 +509,40 @@ class HomePageFragment : Fragment() {
                             binding.recyclerViewWallapapers.layoutManager = layoutManager
                             adapterWallapers=RecyclerAdapterWallapers(it.data)
                             binding.recyclerViewWallapapers.adapter = adapterWallapers
+                            adapterWallapers.onClickListeer(object : RecyclerAdapterWallapers.ClickListener {
+                                override fun OnClick(position: Int) {
+                                    var dta= adapterWallapers.wallpapersModelItem!![position].image
+
+                                    val request = DownloadManager.Request(dta.toUri())
+                                    request.apply {
+                                        setTitle("21Go")
+                                        setDescription("Downloading...")
+                                        setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                                        setMimeType("image/jpeg")
+                                        setDestinationInExternalPublicDir(
+                                            Environment.DIRECTORY_DOWNLOADS,
+                                            "Educool Downloads/Notes/Wallpapers.pdf")
+                                        setAllowedOverRoaming(true)
+                                        setAllowedOverMetered(true)
+                                    }
+                                    val downloadManager =
+                                        activity?.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+                                    downloadId = downloadManager.enqueue(request)
+                                }
+                                val broadcastReceiver = object : BroadcastReceiver() {
+                                    override fun onReceive(context: Context?, intent: Intent?) {
+                                        val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+                                        if (id == downloadId) {
+                                            Toast.makeText(context, "Download complete", Toast.LENGTH_SHORT).show()
+                                        }
+
+                                    }
+
+                                }
+
+
+                            })
                         }
                     }
                 })
-        }
-
-        if (mTimerRunning) {
-            mEndTime = prefs.getLong("endTime", 0);
-            mTimeLeftInMillis = mEndTime - System.currentTimeMillis();
-
-            if (mTimeLeftInMillis < 0) {
-                mTimeLeftInMillis = 0;
-                mTimerRunning = false;
-                updateCountDownText();
-                updateButtons();
-            } else {
-                startTimer();
-            }
-        }
-    }
-
-
-}
+    }}}

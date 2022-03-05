@@ -89,11 +89,11 @@
 
                 <ImageView
                     android:id="@+id/ImageHoldeHabits"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="45dp"
-                    android:layout_marginTop="30dp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="27dp"
+                    app:layout_constraintStart_toStartOf="@+id/PieChartHabits"
                     app:layout_constraintTop_toTopOf="@+id/PieChartHabits"
                     app:srcCompat="@drawable/ic_book" />
             </androidx.constraintlayout.widget.ConstraintLayout>

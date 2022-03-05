@@ -33,7 +33,7 @@ class RecyclerAdapterHabits: RecyclerView.Adapter<RecyclerAdapterHabits.ViewHold
         position==0->
             {
                 holder.binding.HabitTitle.text = "Workout"
-                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_meditation)
+                holder.binding.ImageHoldeHabits.setImageResource(R.drawable.ic_workout)
             }
             position==1->
             {
