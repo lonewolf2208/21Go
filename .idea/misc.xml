@@ -35,18 +35,67 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/present_view.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/menu/nav_header_menu.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/border_curve.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/curve.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_email.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_alcoholcategory.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_choosecategorydesign.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_flagachievement.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1__1_.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_meditation.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_smokingcategory.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_socialmediacategory.xml" value="0.1" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__35_.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__40_.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__41_.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_workout.xml" value="0.2703125" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/drawable/progressbarcolour.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/font/roboto_bold.xml" value="0.16041666666666668" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/absent_view.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_download.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_habits.xml" value="0.4" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/card_view_wallpapers.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/edit_text_layout.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_category_choose.xml" value="0.210412147505423" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_home_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/fragment_splash__screen.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/present_view.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/21Go/app/src/main/res/menu/nav_header_menu.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/border_curve.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/curve.xml" value="0.17777777777777778" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_email.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/custom_username.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.17777777777777778" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_basic_page.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_basic_page__1_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_book.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_flagachievement.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_group__2_.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_group__4_.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_splashscreen.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_healthy_lifestyle_bro__1__1__1_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_meditation.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_splashscreen.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__33_.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__35_.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__36_.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__37_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__38_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__39_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__40_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/ic_vector__41_.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/drawable/progressbarcolour.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/absent_view.xml" value="0.17083333333333334" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_home_page.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/activity_main.xml" value="0.17083333333333334" />
@@ -58,6 +107,9 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/login_fragment.xml" value="0.25" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/present_view.xml" value="0.17083333333333334" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/layout/stats_fragment.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/menu/menu.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/menu/nav_header_menu.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/21Go/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18697916666666667" />
