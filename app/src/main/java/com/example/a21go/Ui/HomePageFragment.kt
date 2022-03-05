@@ -24,9 +24,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.a21go.Activity.MainActivity
+import com.example.a21go.Adapters.RecyclerAdapterWallapers
 import com.example.a21go.Network.Response
 import com.example.a21go.Repository.HomePageRepo
 import com.example.a21go.Repository.RelapseRepo
+import com.example.a21go.Repository.getWallpapersRepo
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
@@ -35,6 +37,8 @@ class HomePageFragment : Fragment() {
     lateinit var binding:FragmentHomePageBinding
     private var layoutManager: RecyclerView.LayoutManager?=null
     lateinit var adapter: RecyclerAdapterHabits
+    private var layoutManagerWallpapers: RecyclerView.LayoutManager?=null
+    lateinit var adapterWallapers: RecyclerAdapterWallapers
     private val START_TIME_IN_MILLIS: Long = 21*24*60*60*1000
 
     private var mTextViewCountDown: TextView? = null
@@ -63,6 +67,9 @@ class HomePageFragment : Fragment() {
             LinearLayoutManager.HORIZONTAL,
             false
         )
+        lifecycleScope.launch {
+
+        }
         Splash_Screen.data.observe(viewLifecycleOwner,
             {
 
@@ -85,13 +92,6 @@ class HomePageFragment : Fragment() {
 
         mButtonReset = binding.buttonReset
 
-//        mButtonStartPause?.setOnClickListener(View.OnClickListener {
-//            if (mTimerRunning) {
-//                pauseTimer()
-//            } else {
-//                startTimer()
-//            }
-//        })
 
         mButtonReset?.setOnClickListener(View.OnClickListener { val builder= AlertDialog.Builder(requireContext())
             builder.setTitle("Quit App")
@@ -473,6 +473,25 @@ class HomePageFragment : Fragment() {
 
         updateCountDownText();
         updateButtons();
+        lifecycleScope.launch {
+            var days = TimeUnit.MILLISECONDS.toDays(mTimeLeftInMillis)
+            var data=getWallpapersRepo().getWallapapersApi(days.toInt())
+            data.observe(viewLifecycleOwner,
+                {
+                    when (it) {
+                        is Response.Success -> {
+                            layoutManager = LinearLayoutManager(
+                                requireContext(),
+                                LinearLayoutManager.HORIZONTAL,
+                                false
+                            )
+                            binding.recyclerViewWallapapers.layoutManager = layoutManager
+                            adapterWallapers=RecyclerAdapterWallapers(it.data)
+                            binding.recyclerViewWallapapers.adapter = adapterWallapers
+                        }
+                    }
+                })
+        }
 
         if (mTimerRunning) {
             mEndTime = prefs.getLong("endTime", 0);
