@@ -45,6 +45,10 @@ class CommunityForum : Fragment() {
                     when(it)
                     {
                         is Response.Success->{
+                            if(it.data?.size==0)
+                            {
+                                binding.NoCommunity.visibility=View.VISIBLE
+                            }
                             layoutManager = LinearLayoutManager(
                                 container?.context)
                             binding.RecyclerViewCommunityFOrum.layoutManager = layoutManager

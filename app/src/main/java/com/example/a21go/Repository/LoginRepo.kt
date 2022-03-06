@@ -37,17 +37,16 @@ class LoginRepo {
                   userDetails.value=response.body()
 
                }
-//               else if (response.code() == 401) {
-//
-//                  loginLiveData.postValue(Response.Error("User not registered"))
-//               }
-//                else if(response.code()==400)
-//               {
-//                  loginLiveData.postValue(Response.Error("Wrong Password"))
-//               }
+               else if (response.code() == 400) {
+                  loginLiveData.postValue(Response.Error("User name already exits.Please Choose a Unique Username."))
+               }
+                else if(response.code()==406)
+               {
+                  loginLiveData.postValue(Response.Error("Email Already Registered with a different username"))
+               }
                else {
-                  loginLiveData.postValue(Response.Error(response.code().toString()))
-                 // Log.d("RESPONSE BODY", response.code().toString())
+                  loginLiveData.postValue(Response.Error("Something went wrong . Please try again!!"))
+
                }
             }
 

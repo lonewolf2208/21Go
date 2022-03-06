@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="136dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/ic_rectangle2choosecategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/ic_rectangle2choosecategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SocialMEdiaCategory" />
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
-                android:layout_marginEnd="28dp"
+                android:layout_marginEnd="40dp"
                 android:src="@drawable/ic_rectanglemiddlechoose"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/AlcoholCategory" />
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/ic_rectangle2choosecategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SmokingCategory" />
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/ic_rectangle2choosecategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PornCategory" />

@@ -88,6 +88,20 @@ class HomePageFragment : Fragment() {
         binding.RecyclerViewHabits.layoutManager = layoutManager
         adapter= RecyclerAdapterHabits()
         binding.RecyclerViewHabits.adapter = adapter
+        binding.SelfDisciplineCardView.setOnClickListener {
+            val uri: Uri =
+                Uri.parse("https://youtu.be/rgfiZB5EudA")
+
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+        binding.CardViewSelfDetox.setOnClickListener{
+            val uri: Uri =
+                Uri.parse("https://www.youtube.com/watch?v=fkIygLMFcI8&t=1s")
+
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
         binding.UrlPage.setOnClickListener {
             val uri: Uri =
                 Uri.parse("https://youtu.be/Msx8fz9qvUM")
@@ -409,7 +423,7 @@ class HomePageFragment : Fragment() {
         startTimer()
 
         lifecycleScope.launch {
-            var result=RelapseRepo().RelapseRepoApi(Splash_Screen.id.toInt(),"Mood",(21-days).toInt())
+            var result=RelapseRepo().RelapseRepoApi(Splash_Screen.id.toInt(),"Mood",(21-(days+1)).toInt())
             result.observe(viewLifecycleOwner,
                 {
                     when(it)

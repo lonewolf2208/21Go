@@ -38,6 +38,7 @@ class NotesAndJournals : Fragment() {
         binding.AddNotes.setOnClickListener {
             findNavController().navigate(R.id.action_notesAndJournals_to_journalsPost)
         }
+
         lifecycleScope.launch {
             var result= GetJournalsRepo().getJournalsForumApi(Splash_Screen.id.toInt())
             result.observe(viewLifecycleOwner,
@@ -45,6 +46,10 @@ class NotesAndJournals : Fragment() {
                     when(it)
                     {
                         is Response.Success->{
+                            if(it.data?.size==0)
+                            {
+                                binding.NoJournals.visibility=View.VISIBLE
+                            }
                             layoutManager = LinearLayoutManager(
                                 container?.context)
                             binding.RecyclerViewNotesAndJournals.layoutManager = layoutManager
